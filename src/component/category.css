@@ -1,0 +1,84 @@
+.categoryName{
+    font-size: medium;
+    color: white;
+}
+.overlayModal{
+    position: absolute;
+    left: calc(50% - 250px) ;
+    top:  calc(50% - 100px);
+    height: 200px;
+    width: 500px;
+    background-color: #896b9c;
+    opacity: 1;
+}
+.modal-close-btn{
+    position: absolute;
+    right: 5px;
+    color: rgb(4, 255, 255);
+    cursor: pointer;
+}
+.modal-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+}
+.modal-head{
+    width: 100%;
+    padding: 10px 20px ;
+    /* border-radius: 8px; */
+    color: white;
+    display: flex;
+}
+.empty{
+    background-color: white;
+    color: gray;
+    padding: 5px 5px;
+}
+.filled{
+    background-color: brown;
+    padding: 5px 5px;
+}
+.modal-date{
+    display: flex;
+    align-items: center;
+    padding: 0 5px ;
+    border-radius: 5px;
+    position: relative;
+    background-color: #896b9c;
+    color: white;
+    /* background-color: white; */
+    margin-left: auto;
+    left: -40px;
+}
+.amount{
+    padding: 10px 20px;
+    color: white;
+}
+.cat_input{
+    position: absolute;
+    right: 100px;
+    
+}
+.inpt{
+    position: absolute;
+    padding: 5px 10px;
+    right: 71px;
+    width: 300px;
+}
+.btns{
+    display: flex;
+    justify-content: center;
+    column-gap: 40px;
+    margin-top: 24px;
+}
+.sub{
+    background-color: brown;
+    border-color: brown;
+    width: 80px;
+    border-radius: 6px;
+    color: white;
+    line-height: 25px;
+}

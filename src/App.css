@@ -1,38 +1,83 @@
-.App {
-  text-align: center;
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+body, #root, html{
+    height: 100vh;
+}
+.App{
+    height: 100%;
+    width: 100%;
+    background-color:#A1A9FE;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-items: flex-start;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Opposite side of side bar */
+.oppositeToSideBar{
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Expense Display Component CSS (upper screen on right half)*/
+
+.ExpenseComp{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: flex-start;
+    padding: 0 10% ;
+    column-gap: 2px;
+    
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Category Icon CSS (Lower screen on right half)*/
+
+.categoryIcon{
+    width: 100%;
+    padding: 10% 10%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-gap: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Side Bar Icons */
+.icon{
+    text-align: center;
+    font-size: 26px;
+    color: rgb(225, 221, 225);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Side Bar Button Icon with Text */
+.sidebtn{
+    padding-left: 10px;
+    margin-top: 20%;
+    height: 50px;
+    /* border-radius: 12px; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: small;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.sidebtn:hover{
+    background-color: #A16AE8;
+}
+
+/* Side Bar Icons Text*/
+.btn-name{
+    margin-left: 8px;
+}
+.sidebtn:hover .icon{
+    color: brown;
+}
+.email{
+    font-size: xx-small;
+    padding-left: 10px;
+    color: rgb(18, 172, 255);
 }

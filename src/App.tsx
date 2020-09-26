@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+
+import './App.css'
+import ExpenseComponent from './component/ExpenseComponent'
+import SideBar from './component/SideBar'
+import Categories from './component/Categories'
+import { UseAppState } from './appContext'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const {state ,  } = UseAppState()
+    return (
+      <div className="App">
+        <SideBar />
+        <div className='oppositeToSideBar'>
+        <div className='ExpenseComp'>
+        <ExpenseComponent title={'This Week'}/>
+        <ExpenseComponent title={'Today'} />
+        </div>
+        <div className='categoryIcon' >
+          {
+             state.categories.map((item :any) => {
+             return <Categories text = {item.title} />
+             })
+          }
+        </div>
+        </div>
+      </div>
+       )
 }
-
 export default App;
