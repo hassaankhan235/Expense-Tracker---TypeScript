@@ -19,9 +19,9 @@ import './category.css'
 
 function Categories(props: categoryProps) { 
 const [modalopen, setModalopen] = useState(false)
-const [expense, setExpense] = useState('')
+const [expense, setExpense] = useState()
 const {text} = props
-const {state, dispatch} = UseAppState()
+const {dispatch} = UseAppState()
 
   const handleModal = (show : boolean)=> {
     // console.log('clicked', show)
@@ -32,6 +32,12 @@ const {state, dispatch} = UseAppState()
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     setExpense(e.currentTarget.value)
     console.log(expense)
+  }
+
+  const saveExpense = (show: boolean) => {
+    setModalopen(show)
+    dispatch({type:'save_expense', payload:{text: text, date: Date(), expense: expense}})
+    setExpense(0)
   }
   return (
     <div>
@@ -59,7 +65,8 @@ const {state, dispatch} = UseAppState()
           <InputModal showMod = {modalopen} 
           handleMod ={handleModal}
           category = {text}
-          handleChange = {handleChange} />
+          handleChange = {handleChange}
+          save = {saveExpense} />
         }
         
         </div>

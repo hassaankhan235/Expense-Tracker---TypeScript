@@ -1,21 +1,23 @@
-import React, { createContext, useContext, useReducer } from 'react'
+import React, { createContext, useContext, useEffect, useReducer } from 'react'
 import { data , Action, appStateContextProps, expense} from './types/types'
+import {v1 as uuid} from 'uuid'
 
 const Appdata : data = {
     Income : 20000,
     categories : [
-        {title: 'First Aid', click: false, 
+        {id: uuid(), title: 'First Aid', click: false, 
         expenses: [] as expense[]},
-        {title: 'Automobile', click: false, expenses: [] as expense[]},
-        {title: 'Transport', click: false, expenses: [] as expense[]},
-        {title: 'Food', click: false, expenses: [] as expense[]},
-        {title: 'Rent', click: false, expenses: [] as expense[]},
-        {title: 'Gifts', click: false, expenses: [] as expense[]},
-        {title: 'Child Care', click: false, expenses: [] as expense[]},
-        {title: 'Clothing', click: false, expenses: [] as expense[]},
-        {title: 'Utilities', click: false, expenses: [] as expense[]}
+        {id: uuid(), title: 'Transport', click: false, expenses: [] as expense[]},
+        {id: uuid(), title: 'Automobile', click: false, expenses: [] as expense[]},
+        {id: uuid(), title: 'Food', click: false, expenses: [] as expense[]},
+        {id: uuid(), title: 'Rent', click: false, expenses: [] as expense[]},
+        {id: uuid(), title: 'Gifts', click: false, expenses: [] as expense[]},
+        {id: uuid(), title: 'Child Care', click: false, expenses: [] as expense[]},
+        {id: uuid(), title: 'Clothing', click: false, expenses: [] as expense[]},
+        {id: uuid(), title: 'Utilities', click: false, expenses: [] as expense[]}
     ]
 }
+
 
 const DataContext = createContext({} as appStateContextProps)
 
@@ -23,18 +25,25 @@ const appStateReducer = (state: data, action: Action) : data => {
   switch(action.type){
     case "category_click":{
       state.categories.map(item => {
-        item.title === action.payload.text ? item.click = true :
+        return item.title === action.payload.text ? item.click = true :
         item.click = false 
       } ) 
       console.log(state)
       return{...state}
+    }
+    case "save_expense" : {
+      const categoryIndex = state.categories.findIndex(item => item.title === action.payload.text)
+      state.categories[categoryIndex].expenses.push({date:action.payload.date, expense: action.payload.expense})
     }
   }
   return{...state}
 }
 
 export const DataContextProvider = ({children} : React.PropsWithChildren<{}>) => {
-  const[state, dispatch] = useReducer(appStateReducer, Appdata)
+  useEffect(() => localStorage.setItem('appData', JSON.stringify(Appdata)))
+  const IS = localStorage.getItem('appData') as string
+  const Initial_state = JSON.parse(IS) ?? Appdata
+  const[state, dispatch] = useReducer(appStateReducer, Initial_state)
     return (
       <DataContext.Provider value={{state, dispatch}}>
         {children}

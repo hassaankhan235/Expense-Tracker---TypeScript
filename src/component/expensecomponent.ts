@@ -9,4 +9,6 @@ background-color:  #A16AE8;
 text-align: center;
 color: white;
 border-radius: 2px;
+display: flex;
+flex-direction: column;
 `

@@ -5,6 +5,7 @@ export interface ExpenseComponentprops {
 export interface data {
       Income: number;
       categories: {
+      id   : string;
       title: string;
       click: boolean;
       expenses: expense[];
@@ -12,7 +13,8 @@ export interface data {
 }
 
 export interface expense{
-  date: string, expense: string;
+  date: string, 
+  expense: string;
 } 
 
 export interface state{
@@ -28,9 +30,17 @@ export interface Action{
   type: string;
   payload: {
     text: string;
+    date: string;
+    expense: string;
   }
 }
 
 export interface categoryProps {
   text : string
+}
+
+export interface FormatedDt {
+  date : string;
+  month: string;
+  year: string;
 }

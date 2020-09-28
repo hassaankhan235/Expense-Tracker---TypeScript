@@ -4,7 +4,7 @@ import Modal from 'react-modal';
 Modal.setAppElement('#root')
 
 function InputModal(props: any) {
-  const {showMod, category, handleMod, handleChange} = props
+  const {showMod, category, handleMod, handleChange, save} = props
   var d = new Date();
   var month = d.getMonth()
   var date = d.getDate()
@@ -22,9 +22,10 @@ function InputModal(props: any) {
             <div className = 'modal-date'> {
                 `${date}/${month}/${year}`
                 } </div> </div>
+        <form>
         <div className='amount'>
             Amount <input 
-            type='text' 
+            type='number' required 
             className='inpt'
             onChange= {handleChange} /> 
         </div>
@@ -35,11 +36,16 @@ function InputModal(props: any) {
             value= {`${category}`}
             disabled/> 
         </div>
+        
 
         <div className='btns'>
-            <input type='submit' value='Submit' className='sub'/>
+            <input type='submit' 
+            value='Submit' 
+            className='sub'
+            onClick = {() => save(false) } />
             <input type='submit' value='Cancel' className='sub'/>
         </div>
+        </form>
         </div>
       </Modal>
     </div>
