@@ -11,4 +11,7 @@ color: white;
 border-radius: 2px;
 display: flex;
 flex-direction: column;
+@media only screen and (max-width: 600px) {
+    margin: 5% 0%;
+}
 `

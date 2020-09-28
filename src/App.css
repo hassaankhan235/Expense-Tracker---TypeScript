@@ -151,4 +151,10 @@ body, #root, html{
         padding-top: 0%;
         margin-top: 0%;
     }
+    .Trans-Container{
+        padding: 0% 0%;
+    }
+    .ExpenseComp{
+        padding: 0 5px;
+    }
 }
