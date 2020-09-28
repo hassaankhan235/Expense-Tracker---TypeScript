@@ -15,14 +15,14 @@ function SideBar() {
       <div> <span className='email'> hassaankhan235@hotmail.com </span> </div>
 
       <div className = 'sidebar-icon-container'>
-      <Link to='/' style={LinkStyle}>
+      <Link to='/' style={LinkStyle} className='resp' >
       <div className="sidebtn">
         <FaHome className="icon" />
         <div className="btn-name">
           Home  </div>
       </div></Link>
 
-      <Link to='/transactions' style={LinkStyle}>
+      <Link to='/transactions' style={LinkStyle} className= 'resp'>
       <div className="sidebtn">
         <FaBusinessTime className="icon" />
         <span className="btn-name">

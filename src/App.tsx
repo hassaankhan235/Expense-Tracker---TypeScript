@@ -36,9 +36,8 @@ function App() {
         <Route path='/setting' exact>
           <div  className='Trans-Container' style={{color:'brown'}} > 
             Set Income 
-            <input type='text' 
-            value = {`${state.Income} - Sorry the value can't be changed in test version`}
-            style = {{marginLeft:'10px',width:'400px'}} disabled /> </div>
+            <input type='text' className = 'setIncome' 
+            value = {`${state.Income} - Sorry the value can't be changed in test version`} disabled /> </div>
         </Route>
         </div>
       </div>

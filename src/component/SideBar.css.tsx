@@ -10,12 +10,14 @@ width:100vw;
 display: flex;
 font-size:1rem;
 padding: 0;
+margin:0;
 }
 `
  
 export const LinkStyle = {
     color: 'white',
     textDecoration : 'none',
+    
 } 
 
 

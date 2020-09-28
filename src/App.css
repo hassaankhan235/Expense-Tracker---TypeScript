@@ -110,7 +110,10 @@ body, #root, html{
 .sidebar-icon-container{
 
 }
-
+.setIncome{
+    margin-left:10px;
+    width:400px;
+}
 
 @media only screen and (max-width: 600px) {
     .App{
@@ -122,7 +125,8 @@ body, #root, html{
         width: 100%;
         display: flex;
         flex-direction: row;
-        align-items: center;
+        align-items: flex-start;
+        justify-content: flex-start;
         font-size: xx-small;
         margin-top: 0%;
         padding-top: 0%;
@@ -131,20 +135,23 @@ body, #root, html{
         font-size: small;
     }
     .icon{
-        width: 33%;
-        padding-top: 0%;
-        margin-top: 0%;
+        width: 20%;
+        padding: 0%;
+        margin: 0%;
         font-size: small;
     }
     .sidebtn{
         display: flex;
-        justify-items: center;
-        margin-left: 50px;
+        justify-items: flex-start;
+        align-items: center;
+        margin-left: 10px;
         padding: 0 15px;
     }
     .side-container{
         display: flex;
         flex-direction: column-reverse;
+        align-items: flex-start;
+        justify-content: flex-start;
     }
     .Myname{
         font-size: smaller;
@@ -152,9 +159,23 @@ body, #root, html{
         margin-top: 0%;
     }
     .Trans-Container{
+        display: flex;
+        flex-direction: column;
         padding: 0% 0%;
+        padding-left: 5px;
+        margin-top: 50px;
     }
     .ExpenseComp{
         padding: 0 5px;
+    }
+    .setIncome{
+        margin-top: 10px;
+        margin-left:5px;
+        width: 280px;
+        font-size: xx-small;
+    }
+    .resp{
+        padding: 0;
+        margin: 0;
     }
 }
