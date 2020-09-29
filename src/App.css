@@ -119,7 +119,7 @@ body, #root, html{
     .App{
         display: flex;
         flex-direction: column-reverse ;
-        height: auto;
+        height: 100vh;
     }
     .sidebar-icon-container{
         width: 100%;

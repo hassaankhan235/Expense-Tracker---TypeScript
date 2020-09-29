@@ -7,8 +7,17 @@ import SideBar from './component/SideBar'
 import Categories from './component/Categories'
 import { UseAppState } from './appContext'
 import Transaction from './component/Transaction'
+import firebase from './firebase'
+import { getTokenSourceMapRange } from 'typescript';
+
 
 function App() {
+  const messaging = firebase.messaging();
+  messaging.requestPermission().then(() => {
+    return messaging.getToken()
+  }).then((token: any)=>{
+    console.log('TOKEN', token)
+  })
   const {state ,  } = UseAppState()
     return (
       <div className="App">
