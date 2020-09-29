@@ -8,7 +8,6 @@ import Categories from './component/Categories'
 import { UseAppState } from './appContext'
 import Transaction from './component/Transaction'
 import firebase from './firebase'
-import { getTokenSourceMapRange } from 'typescript';
 
 
 function App() {
