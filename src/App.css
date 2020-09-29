@@ -167,6 +167,9 @@ body, #root, html{
     }
     .ExpenseComp{
         padding: 0 5px;
+        margin-bottom: 6%;
+        /* display: flex;
+        flex-direction: column; */
     }
     .setIncome{
         margin-top: 10px;
